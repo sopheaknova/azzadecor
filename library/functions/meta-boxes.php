@@ -184,6 +184,58 @@ $post_format_quote = array(
 	)
 );
 
+/* ---------------------------------------------------------------------- */
+/*	Product post type
+/* ---------------------------------------------------------------------- */
+$post_type_product = array(
+	'id'          => 'product-setting',
+	'title'       => 'Branding Meta',
+	'desc'        => '',
+	'pages'       => array( 'sp_product' ),
+	'context'     => 'normal',
+	'priority'    => 'high',
+	'fields'      => array(
+		array(
+			'label'		=> 'Website',
+			'id'		=> $prefix . 'product_website',
+			'type'		=> 'text',
+			'desc'		=> 'Enter website of product',
+		)
+	)
+);
+
+/* ---------------------------------------------------------------------- */
+/*	Catalog post type
+/* ---------------------------------------------------------------------- */
+$post_type_catalog = array(
+	'id'          => 'catalog-setting',
+	'title'       => 'Catalog Meta',
+	'desc'        => '',
+	'pages'       => array( 'sp_catalog' ),
+	'context'     => 'normal',
+	'priority'    => 'high',
+	'fields'      => array(
+		array(
+			'label'		=> 'Add Catalogs',
+			'id'		=> $prefix . 'add_catalogs',
+			'type'		=> 'list-item',
+			'desc'		=> 'Add cover & pdf link of each catalogs',
+			'settings'	=> array( 
+	          array(
+					'label'		=> 'Catalog PDF',
+					'id'		=> $prefix . 'catalog_pdf',
+					'type'		=> 'upload',
+				),
+	          array(
+					'label'		=> 'Cover Catalog',
+					'id'		=> $prefix . 'catalog_cover',
+					'type'		=> 'upload',
+				)
+	        )  
+		)
+	)
+);
+
 /*  Register meta boxes
 /* ------------------------------------ */
 	ot_register_meta_box( $page_layout_options );
@@ -193,4 +245,6 @@ $post_format_quote = array(
 	ot_register_meta_box( $post_format_link );
 	ot_register_meta_box( $post_format_quote );
 	ot_register_meta_box( $post_format_video );
+	ot_register_meta_box( $post_type_product );
+	ot_register_meta_box( $post_type_catalog );
 }
