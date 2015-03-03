@@ -85,6 +85,11 @@ if( !function_exists('sp_theme_setup') ) {
 		/* Add custom thumbnail sizes: base size 1280x768, 960x576, 940x564, 640x384, 320x192 */
 		set_post_thumbnail_size( 320, 192, true );
 
+		/* image size */
+		add_image_size( 'slideshow-thumbnails', 1280, 720, true );
+		add_image_size( 'catalog-thumbnails', 200, 120, true );
+		add_image_size( 'logo-brand', 176, 106, true );
+
 		/* And HTML5 support */
 		add_theme_support( 'html5' );
 		

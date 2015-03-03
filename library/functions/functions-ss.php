@@ -20,6 +20,7 @@ if( !function_exists('sp_frontend_scripts_styles') ) {
 		wp_enqueue_style('flexslider-custom', SP_ASSETS . '/css/flexslider-custom.css', false, SP_THEME_VERSION);
 		wp_enqueue_style('magnific-popup', SP_ASSETS . '/css/magnific-popup.css', false, SP_THEME_VERSION);
 		wp_enqueue_style('magnific-custom', SP_ASSETS . '/css/magnific-custom.css', false, SP_THEME_VERSION);
+		wp_enqueue_style('backstretch', SP_ASSETS . '/css/backstretch.css', false, SP_THEME_VERSION);
 		wp_enqueue_style('main', SP_ASSETS . '/css/main.css', false, SP_THEME_VERSION);
 		
 		//Register scripts
@@ -27,6 +28,7 @@ if( !function_exists('sp_frontend_scripts_styles') ) {
 		wp_enqueue_script('flexslider', SP_ASSETS . '/js/vendor/jquery.flexslider.js', array('jquery'), SP_THEME_VERSION, true);
 		wp_enqueue_script('fitvideos', SP_ASSETS . '/js/vendor/jquery.fitvids.js', array('jquery'), SP_THEME_VERSION, true);
 		wp_enqueue_script('magnific-popup', SP_ASSETS . '/js/vendor/jquery.magnific-popup.min.js', array('jquery'), SP_THEME_VERSION, false);
+		wp_enqueue_script('backstretch', SP_ASSETS . '/js/jquery.backstretch.js', array('jquery'), SP_THEME_VERSION, true);
 		wp_enqueue_script('main', SP_ASSETS . '/js/main.js', array('jquery'), SP_THEME_VERSION, true);
 
 		if ( is_singular() && comments_open() ) { wp_enqueue_script( 'comment-reply' ); }

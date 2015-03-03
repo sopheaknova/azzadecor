@@ -20,4 +20,5 @@ load_template( SP_BASE_DIR . '/library/custom-posts/cp-product.php' );
 load_template( SP_BASE_DIR . '/library/custom-posts/cp-catalog.php' );
 
 //Taxonomies
-load_template( SP_BASE_DIR . '/library/custom-posts/taxonomy-category.php' );
+load_template( SP_BASE_DIR . '/library/custom-posts/taxonomy-catalog.php' );
+load_template( SP_BASE_DIR . '/library/custom-posts/taxonomy-product.php' );

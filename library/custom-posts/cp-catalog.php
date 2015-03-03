@@ -126,7 +126,7 @@
 					break;
 
 				case "catalog_category":
-					the_terms( $post->ID, 'sp_category' );
+					the_terms( $post->ID, 'sp_catalog_category' );
 					break;
 
 				default:
