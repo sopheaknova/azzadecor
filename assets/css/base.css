@@ -50,7 +50,7 @@ h6 {
 
 /* Link */
 a, a > * {
-	color: #001848; /* #4d90fe; */
+	color: #DDA838; /* #4d90fe; */
 	text-decoration: none;
 	-webkit-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
 	   -moz-transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
@@ -59,7 +59,7 @@ a, a > * {
 	        transition: background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out;
 }
 
-a:hover { text-decoration: none; color: #DDA838; }
+a:hover { text-decoration: none; color: #FFFFFF; }
 a:hover, a:active { outline: 0 }
 
 /* Text elements */

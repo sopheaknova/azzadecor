@@ -22,52 +22,51 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="wrapper">
+<!-- Start header -->
+    <header>
 
-<?php if ( ot_get_option('responsive') != 'off' ) : ?>
-	<aside id="sidemenu-container">
-        <div id="sidemenu">
-        <nav class="menu-mobile-container">
-        <?php echo sp_mobile_navigation(); ?>
-        </nav>
-        </div>            	
-    </aside> <!-- end #sidemenu-container -->
-<?php endif; ?>
+        <div class="header-inner scrolled">
+        <a class="logo" href="<?php echo home_url() ?>/"  title="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>">
+            <img src="<?php echo SP_ASSETS; ?>/images/logo-mobile.png">
+        </a>
+        </div> <!-- /.header-inner -->
+        
+        <div class="menu-button">
+            <span class="before"></span>
+            <span class="middle"></span>
+            <span class="after"></span>
+        </div> <!-- /.menu-button -->
+        
+    </header>
+    <!-- End header -->
 
-    <div id="content-container">
+    <!-- Start sidebar -->
+    <nav class="push-sidebar push-left">
+        <div class="logo-nav"><a href="<?php echo home_url() ?>/"  title="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>">
+            <img src="<?php echo SP_ASSETS; ?>/images/logo-header.png"></a>
+        </div>
+
+        <?php echo sp_main_navigation(); ?>
+
+        <div class="quick-contact">
+            <p>#290B, Mao Tse Toung Blvd, Tomneuk Teuk, Chamkar Mon Phnom Penh, Cambodia</p>
+            <ul>
+                <li>P. 012 98 58 95 / 16 88 69 86</li>
+                <li>E. sales@azza-decor.com</li>
+                <li>W. azza-decor.com</li>
+            </ul>
+        </div>
+        
+        <div class="footer-nav">
+            <img src="<?php echo SP_ASSETS; ?>/images/pic-italy-flat.png">
+            <p>&copy AZZA DECOR &copy 2015</p>
+        </div>
+
+    </nav> 
+    <!-- End Sidebar -->
 
     <div class="navigation-overlay"></div>
 
-    <header id="header">
-        
-        <div class="menu-button">
-            <span class="border-before"></span>
-            <span class="border-main"></span>
-            <span class="border-after"></span>
-        </div> <!-- .menu-button -->
-
-        <!-- <div id="menu-trigger" class="mobile-menu-trigger left icon-menu"></div> -->
-
-        <div class="brand" role="banner">
-            <?php if( !is_singular() ) echo '<h1>'; else echo '<h2>'; ?>
-            
-            <a  href="<?php echo home_url() ?>/"  title="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>">
-                <?php if(ot_get_option('custom-logo')) : ?>
-                <img src="<?php echo ot_get_option('custom-logo'); ?>" alt="<?php echo esc_attr( get_bloginfo('name', 'display') ); ?>" />
-                <?php else: ?>
-                <span><?php bloginfo( 'name' ); ?></span>
-                <?php endif; ?>
-            </a>
-            
-            <?php if( !is_singular() ) echo '</h1>'; else echo '</h2>'; ?>
-        </div><!-- end .brand -->
-
-        <nav id="primary-menu-container" class="clearfix">
-            <?php echo sp_main_navigation(); ?>
-        </nav><!-- .primary-nav .wrap -->
-
-        <?php echo languages_list_header(); ?>
-            
-		
-    </header><!-- end #header -->
+    <!-- Start wrapper -->
+    <div id="wrapper">
 

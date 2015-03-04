@@ -236,6 +236,26 @@ $post_type_catalog = array(
 	)
 );
 
+/* ---------------------------------------------------------------------- */
+/*	Product post type
+/* ---------------------------------------------------------------------- */
+$post_type_page = array(
+	'id'          => 'about-setting',
+	'title'       => 'About Meta',
+	'desc'        => '',
+	'pages'       => array( 'page' ),
+	'context'     => 'normal',
+	'priority'    => 'high',
+	'fields'      => array(
+		array(
+			'label'		=> 'Gallery',
+			'id'		=> $prefix . 'about_gallery',
+			'type'		=> 'gallery',
+			'desc'		=> 'Add gallery of about',
+		)
+	)
+);
+
 /*  Register meta boxes
 /* ------------------------------------ */
 	ot_register_meta_box( $page_layout_options );
@@ -247,4 +267,5 @@ $post_type_catalog = array(
 	ot_register_meta_box( $post_format_video );
 	ot_register_meta_box( $post_type_product );
 	ot_register_meta_box( $post_type_catalog );
+	ot_register_meta_box( $post_type_page );
 }
