@@ -27,6 +27,7 @@
 	        if( $custom_query->have_posts() ) :
 	            while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 	        	<a href="<?php echo get_post_meta( $post->ID, 'sp_product_website', true ); ?>"><?php echo get_the_post_thumbnail( $post->ID, 'logo-brand' ); ?></a>
+	        	
 	        <?php
 	            endwhile; wp_reset_postdata();
 	        endif; ?>
