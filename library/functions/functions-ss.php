@@ -28,7 +28,7 @@ if( !function_exists('sp_frontend_scripts_styles') ) {
 
 		if ( ot_get_option('responsive') != 'off' ) {
 			//wp_enqueue_style('menu-mobile', SP_ASSETS . '/css/menu-mobile.css', false, SP_THEME_VERSION);
-			//wp_enqueue_style('responsive', SP_ASSETS . '/css/responsive.css', false, SP_THEME_VERSION);
+			wp_enqueue_style('responsive', SP_ASSETS . '/css/responsive.css', false, SP_THEME_VERSION);
 			//wp_enqueue_script('mobile-menu', SP_ASSETS . '/js/mobile-menu.js', array('jquery'), SP_THEME_VERSION, true);
 		}
 
