@@ -256,9 +256,41 @@ $post_type_page = array(
 	)
 );
 
+/* ---------------------------------------------------------------------- */
+/*	Return meta box option base on page template selected
+/* ---------------------------------------------------------------------- */
+function rw_maybe_include() {
+	// Include in back-end only
+	if ( ! defined( 'WP_ADMIN' ) || ! WP_ADMIN ) {
+		return false;
+	}
+
+	// Always include for ajax
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+		return true;
+	}
+
+	if ( isset( $_GET['post'] ) ) {
+		$post_id = $_GET['post'];
+	}
+	elseif ( isset( $_POST['post_ID'] ) ) {
+		$post_id = $_POST['post_ID'];
+	}
+	else {
+		$post_id = false;
+	}
+
+	$post_id = (int) $post_id;
+	$post    = get_post( $post_id );
+
+	$template = get_post_meta( $post_id, '_wp_page_template', true );
+
+	return $template;
+}
+
 /*  Register meta boxes
 /* ------------------------------------ */
-	ot_register_meta_box( $page_layout_options );
+
 	ot_register_meta_box( $post_format_audio );
 	ot_register_meta_box( $post_format_chat );
 	ot_register_meta_box( $post_format_gallery );
@@ -267,5 +299,11 @@ $post_type_page = array(
 	ot_register_meta_box( $post_format_video );
 	ot_register_meta_box( $post_type_product );
 	ot_register_meta_box( $post_type_catalog );
-	ot_register_meta_box( $post_type_page );
+
+	$template_file = rw_maybe_include();
+	if ( $template_file == 'templates/template-about.php' ) {
+		ot_register_meta_box( $post_type_page ); 
+	} else {
+		ot_register_meta_box( $page_layout_options );
+	}
 }
