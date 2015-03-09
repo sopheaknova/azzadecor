@@ -17,7 +17,7 @@ Template Name: Contact page
 			<?php the_content(); ?>
 		</div><!-- .main -->
 		<div class="sidebar">
-			<div id="map-canvas">Hello</div>
+			<div id="map-canvas"></div>
 		</div><!-- .sidebar -->
 	</section><!-- #content -->
 <?php endwhile; ?>
