@@ -83,6 +83,12 @@ Template Name: Contact page
 	            animation: google.maps.Animation.DROP
 	        });
 
+	       google.maps.event.addDomListener(window, "resize", function() {
+			    var center = map.getCenter();
+			    google.maps.event.trigger(map, "resize");
+			    map.setCenter(center); 
+			});
+
 	    });
 	</script>
 <?php get_footer(); ?>
