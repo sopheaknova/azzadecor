@@ -12,7 +12,7 @@ global $post;
 	if ( $choice_layout != 'col-1c'):
 ?>
 
-	<aside id="sidebar" class="sidebar" role="complementary">
+	<aside id="sidebar" class="sidebar main" role="complementary">
 	<?php if ( is_active_sidebar($choice_sidebar) ) :	
 			dynamic_sidebar($choice_sidebar);
 		else:?>	
