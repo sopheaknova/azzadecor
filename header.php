@@ -49,11 +49,20 @@
         <?php echo sp_main_navigation(); ?>
 
         <div class="quick-contact">
-            <p>#290B, Mao Tse Toung Blvd, Tomneuk Teuk, Chamkar Mon Phnom Penh, Cambodia</p>
+            <p><?php echo ot_get_option( 'info-address' ); ?></p>
             <ul>
-                <li>P. 012 98 58 95 / 16 88 69 86</li>
-                <li>E. sales@azza-decor.com</li>
-                <li>W. azza-decor.com</li>
+            <?php 
+                if ( function_exists( 'ot_get_option' ) ) {
+
+                /* get the slider array */
+                $infos = ot_get_option( 'info-contact', array() );
+                if ( ! empty( $infos ) ) {
+                foreach( $infos as $info ) {
+                  echo '<li>'.$info['info-value'].'</li>';
+                    }
+                }
+
+            } ?>     
             </ul>
         </div>
         

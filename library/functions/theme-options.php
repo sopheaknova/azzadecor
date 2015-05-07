@@ -75,6 +75,10 @@ function custom_theme_options() {
 			'id'		=> 'styling',
 			'title'		=> 'Styling'
 		),
+		array(
+			'id'		=> 'info',
+			'title'		=> 'Info'
+		),
 	),
 	
 /*  Theme options
@@ -904,7 +908,28 @@ function custom_theme_options() {
 			'desc'		=> 'Set background color and/or upload your own background image',
 			'type'		=> 'background',
 			'section'	=> 'styling'
-		)
+		),
+		// Info: Company
+		array(
+			'label'		=> 'Address',
+			'id'		=> 'info-address',
+			'section'	=> 'info',
+			'type'		=> 'text',
+		),
+		array(
+			'label'		=> 'Contact',
+			'id'		=> 'info-contact',
+			'type'		=> 'list-item',
+			'section'	=> 'info',
+			'choices'	=> array(),
+			'settings'    => array( 
+				array(
+					'label'		=> 'Value',
+					'id'		=> 'info-value',
+					'type'		=> 'text',
+				)
+			)
+		),
 	)
 );
 
