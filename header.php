@@ -54,7 +54,7 @@
             <?php 
                 if ( function_exists( 'ot_get_option' ) ) {
 
-                /* get the slider array */
+                /* get the deatil array */
                 $infos = ot_get_option( 'info-contact', array() );
                 if ( ! empty( $infos ) ) {
                 foreach( $infos as $info ) {
