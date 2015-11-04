@@ -20,9 +20,9 @@ Template Name: New & Press page
 	        foreach ($gallery_array as $gallery) { 
 	          $image_url = wp_get_attachment_image_src($gallery, 'large');
 	        ?>
-			<div class="image-about">
+			<!-- <div class="image-about">
 				<img src="<?php echo $image_url[0]; ?>" alt="pic-about">
-			</div>
+			</div> -->
 			      
             <?php } // end foeach ?>
             
