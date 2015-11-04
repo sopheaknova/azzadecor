@@ -17,15 +17,21 @@ Template Name: New & Press page
 						'post_type'			=> 'sp_news',
 						'posts_per_page'	=>	-1,
 						'post_status'		=>	array('publish'),
-						'order'				=> 	'ASC',
+						'order'				=> 	'DESC',
 					);
 				$custom_query = new WP_Query( $args );
 
 				if( $custom_query->have_posts() ) :
 					while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
-
-				<h1><?php the_title(); ?></h1>
-
+				<section class="news-press clearfix">
+					<div class="one-fourth">
+						<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+					</div>
+					<div class="three-fourth last">
+						<a href=""><?php the_title(); ?></a>
+						<?php the_content(); ?>
+					</div>
+				</section>
 			<?php 	
 				endwhile; wp_reset_postdata();
 				endif; ?>

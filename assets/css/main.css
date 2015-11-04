@@ -544,6 +544,8 @@ h1.entry-title {
   transition: top 0.3s ease-in-out 0s, transform 0.3s ease-in-out 0s;
 }
 
+/* News&Press contact */
+.news-press { padding: 20px; }
 /* ---------------------------------------------------------------
  * COLUMNS : Support 4 columns
  * ------------------------------------------------------------ */	
