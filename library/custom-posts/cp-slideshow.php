@@ -101,7 +101,7 @@
 		function sp_slideshow_cp_columns( $columns ) {
 			
 			$columns['cb']                   	= '<input type="checkbox" />';
-			$columns['slideshow_thumbnail']     = __( 'Cover', 'sptheme_admin' );
+			$columns['slideshow_thumbnail']     = __( 'Thumbnail', 'sptheme_admin' );
 			$columns['title']                	= __( 'Title', 'sptheme_admin' );
 			$columns['date']		 			= __( 'Date', 'sptheme_admin' );
 

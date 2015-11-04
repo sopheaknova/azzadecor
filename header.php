@@ -64,7 +64,15 @@
 
             } ?>     
             </ul>
+            <div class="social">
+                <ul>
+                    <li><a href="https://www.facebook.com/azza.decor?fref=ts" target="_black"><img src="<?php echo SP_ASSETS; ?>/images/icon-facebook.png"></a></li>
+                    <li><a href="https://instagram.com/azzadecor/" target="_black"><img src="<?php echo SP_ASSETS; ?>/images/icon-instagram.png"></a></li>
+                </ul>
+            </div>
         </div>
+
+
         
         <div class="footer-nav">
             <img src="<?php echo SP_ASSETS; ?>/images/pic-italy-flat.png">

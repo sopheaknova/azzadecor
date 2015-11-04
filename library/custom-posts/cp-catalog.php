@@ -101,7 +101,7 @@
 		function sp_catalog_cp_columns( $columns ) {
 			
 			$columns['cb']                   	= '<input type="checkbox" />';
-			$columns['catalog_thumbnail']       = __( 'Cover', 'sptheme_admin' );
+			$columns['catalog_thumbnail']       = __( 'Thumbnail', 'sptheme_admin' );
 			$columns['title']                	= __( 'Title', 'sptheme_admin' );
 			$columns['catalog_category']        = __( 'Category', 'sptheme_admin' );
 			$columns['date']		 			= __( 'Date', 'sptheme_admin' );

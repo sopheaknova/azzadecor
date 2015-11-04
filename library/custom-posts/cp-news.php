@@ -1,7 +1,7 @@
 <?php
 /*
 *****************************************************
-* product custom post
+* product news post
 *
 * CONTENT:
 * - 1) Actions and filters
@@ -21,14 +21,14 @@
 */
 	//ACTIONS
 		//Registering CP
-		add_action( 'init', 'sp_product_cp_init' );
+		add_action( 'init', 'sp_news_cp_init' );
 		
 		//CP list table columns
-		add_action( 'manage_posts_custom_column', 'sp_product_cp_custom_column' );
+		add_action( 'manage_posts_custom_column', 'sp_news_cp_custom_column' );
 
 	//FILTERS
 		//CP list table columns
-		add_filter( 'manage_edit-sp_product_columns', 'sp_product_cp_columns' );
+		add_filter( 'manage_edit-sp_news_columns', 'sp_news_cp_columns' );
 
 
 
@@ -41,35 +41,35 @@
 	/*
 	* Custom post registration
 	*/
-	if ( ! function_exists( 'sp_product_cp_init' ) ) {
-		function sp_product_cp_init() {
+	if ( ! function_exists( 'sp_news_cp_init' ) ) {
+		function sp_news_cp_init() {
 			global $cp_menu_position;
 
 			
 			$labels = array(
-				'name'               => __( 'Products', 'sptheme_admin' ),
-				'singular_name'      => __( 'Product', 'sptheme_admin' ),
+				'name'               => __( 'News & Press', 'sptheme_admin' ),
+				'singular_name'      => __( 'News & Press', 'sptheme_admin' ),
 				'add_new'            => __( 'Add New', 'sptheme_admin' ),
-				'all_items'          => __( 'All Products', 'sptheme_admin' ),
-				'add_new_item'       => __( 'Add New Product', 'sptheme_admin' ),
-				'new_item'           => __( 'Add New Product', 'sptheme_admin' ),
-				'edit_item'          => __( 'Edit Product', 'sptheme_admin' ),
-				'view_item'          => __( 'View Product', 'sptheme_admin' ),
-				'search_items'       => __( 'Search Product', 'sptheme_admin' ),
-				'not_found'          => __( 'No Product found', 'sptheme_admin' ),
-				'not_found_in_trash' => __( 'No Product found in trash', 'sptheme_admin' ),
-				'parent_item_colon'  => __( 'Parent Product', 'sptheme_admin' ),
+				'all_items'          => __( 'All News & Press', 'sptheme_admin' ),
+				'add_new_item'       => __( 'Add New News & Press', 'sptheme_admin' ),
+				'new_item'           => __( 'Add New News & Press', 'sptheme_admin' ),
+				'edit_item'          => __( 'Edit News & Press', 'sptheme_admin' ),
+				'view_item'          => __( 'View News & Press', 'sptheme_admin' ),
+				'search_items'       => __( 'Search News & Press', 'sptheme_admin' ),
+				'not_found'          => __( 'No News & Press found', 'sptheme_admin' ),
+				'not_found_in_trash' => __( 'No News & Press found in trash', 'sptheme_admin' ),
+				'parent_item_colon'  => __( 'Parent News & Press', 'sptheme_admin' ),
 			);	
 
 			$role     = 'post'; // page
-			$slug     = 'product';
+			$slug     = 'news';
 			$supports = array('title', 'editor', 'thumbnail'); // 'title', 'editor', 'thumbnail'
 
 			$args = array(
 				'labels' 				=> $labels,
 				'rewrite'               => array( 'slug' => $slug ),
-				'menu_position'         => $cp_menu_position['menu_product'],
-				'menu_icon'           	=> 'dashicons-chart-pie',
+				'menu_position'         => $cp_menu_position['menu_news'],
+				'menu_icon'           	=> 'dashicons-id',
 				'supports'              => $supports,
 				'capability_type'     	=> $role,
 				'query_var'           	=> true,
@@ -82,7 +82,7 @@
 				'has_archive'			=> true,
 				'can_export'			=> true
 			);
-			register_post_type( 'sp_product' , $args );
+			register_post_type( 'sp_news' , $args );
 		}
 	} 
 
@@ -97,13 +97,12 @@
 	*
 	* $Cols = ARRAY [array of columns]
 	*/
-	if ( ! function_exists( 'sp_product_cp_columns' ) ) {
-		function sp_product_cp_columns( $columns ) {
+	if ( ! function_exists( 'sp_news_cp_columns' ) ) {
+		function sp_news_cp_columns( $columns ) {
 			
 			$columns['cb']                   	= '<input type="checkbox" />';
-			$columns['product_thumbnail']       = __( 'Thumbnail', 'sptheme_admin' );
+			$columns['news_thumbnail']       = __( 'Thumbnail', 'sptheme_admin' );
 			$columns['title']                	= __( 'Title', 'sptheme_admin' );
-			$columns['product_category']        = __( 'Category', 'sptheme_admin' );
 			$columns['date']		 			= __( 'Date', 'sptheme_admin' );
 
 			return $columns;
@@ -115,18 +114,14 @@
 	*
 	* $Col = TEXT [column id for switch]
 	*/
-	if ( ! function_exists( 'sp_product_cp_custom_column' ) ) {
-		function sp_product_cp_custom_column( $column ) {
+	if ( ! function_exists( 'sp_news_cp_custom_column' ) ) {
+		function sp_news_cp_custom_column( $column ) {
 			global $post;
 
 			switch ( $column ) {
 
-				case "product_thumbnail":
+				case "news_thumbnail":
 					echo get_the_post_thumbnail( $post->ID, array(70, 70) );
-					break;
-
-				case "product_category":
-					the_terms( $post->ID, 'sp_product_category' );
 					break;
 
 				default:

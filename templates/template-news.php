@@ -11,20 +11,27 @@ Template Name: New & Press page
 	<section id="content" class="clearfix">
 		<div class="main">
 			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php the_content(); ?>
+
+		    <?php
+		    	$args = array(
+						'post_type'			=> 'sp_news',
+						'posts_per_page'	=>	-1,
+						'post_status'		=>	array('publish'),
+						'order'				=> 	'ASC',
+					);
+				$custom_query = new WP_Query( $args );
+
+				if( $custom_query->have_posts() ) :
+					while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
+
+				<h1><?php the_title(); ?></h1>
+
+			<?php 	
+				endwhile; wp_reset_postdata();
+				endif; ?>
 		</div><!-- .main -->
 		<div class="sidebar">
-			<?php
-			$gallerys = get_post_meta( $post->ID, 'sp_about_gallery', true );
-	        $gallery_array = explode( ',', $gallerys );
-	        foreach ($gallery_array as $gallery) { 
-	          $image_url = wp_get_attachment_image_src($gallery, 'large');
-	        ?>
-			<!-- <div class="image-about">
-				<img src="<?php echo $image_url[0]; ?>" alt="pic-about">
-			</div> -->
-			      
-            <?php } // end foeach ?>
+			
             
 		</div><!-- .sidebar -->
 	</section>

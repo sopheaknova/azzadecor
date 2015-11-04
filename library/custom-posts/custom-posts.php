@@ -12,11 +12,13 @@ if ( ! isset( $cp_menu_position ) )
 			'menu_slideshow'	=> 30,
 			'menu_product'		=> 33,
 			'menu_catalog'		=> 39,
+			'menu_news'			=> 42,
 		);
 
 //All custom posts
 load_template( SP_BASE_DIR . '/library/custom-posts/cp-slideshow.php' );
 load_template( SP_BASE_DIR . '/library/custom-posts/cp-product.php' );
+load_template( SP_BASE_DIR . '/library/custom-posts/cp-news.php' );
 load_template( SP_BASE_DIR . '/library/custom-posts/cp-catalog.php' );
 
 //Taxonomies

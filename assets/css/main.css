@@ -224,7 +224,7 @@ header {
   display: block;
   vertical-align: middle;
   position: fixed;
-  width: 270px; 
+  width: 290px; 
   height: 100%;
   top: 0;
   bottom: 0;
@@ -239,11 +239,11 @@ header {
   overflow-x: hidden;
 }
 .push-left {
-  -webkit-transform: translate3d(-270px, 0, 0);
-  -moz-transform: translate3d(-270px, 0, 0);
-  -ms-transform: translate3d(-270px, 0, 0);
-  -o-transform: translate3d(-270px, 0, 0);
-  transform: translate3d(-270px, 0, 0);
+  -webkit-transform: translate3d(-290px, 0, 0);
+  -moz-transform: translate3d(-290px, 0, 0);
+  -ms-transform: translate3d(-290px, 0, 0);
+  -o-transform: translate3d(-290px, 0, 0);
+  transform: translate3d(-290px, 0, 0);
 }
 .push-open {
   -webkit-transform: translate3d(0, 0, 0);
@@ -253,11 +253,11 @@ header {
   transform: translate3d(0, 0, 0);
 }
 .wrap-push {
-  -webkit-transform: translate3d(270px, 0, 0);
-  -moz-transform: translate3d(270px, 0, 0);
-  -ms-transform: translate3d(270px, 0, 0);
-  -o-transform: translate3d(270px, 0, 0);
-  transform: translate3d(270px, 0, 0);
+  -webkit-transform: translate3d(290px, 0, 0);
+  -moz-transform: translate3d(290px, 0, 0);
+  -ms-transform: translate3d(290px, 0, 0);
+  -o-transform: translate3d(290px, 0, 0);
+  transform: translate3d(290px, 0, 0);
 }
 .push-sidebar,
 #wrapper  {
@@ -290,6 +290,13 @@ header {
 .quick-contact ul {
   margin: 0;
   list-style: none;
+}
+
+/* Social contact */
+.social { margin: 15px 0 0; }
+.social ul li { 
+  float: left;
+  margin-right: 5px;
 }
 
 /* Logo nav and Push main nav */
@@ -330,7 +337,7 @@ ul.primary-nav a {
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
-  padding: 6px 20px;
+  padding: 6px 6px;
   border-bottom: 1px solid #3e3e3e;
   display: block;
   outline: none;
@@ -355,7 +362,7 @@ ul.primary-nav ul {
   height: 0;
 }
 ul.primary-nav ul li a {
-  font-size: 12px;
+  font-size: 11.5px;
   padding-left: 0;
 }
 
