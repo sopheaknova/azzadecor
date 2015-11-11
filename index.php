@@ -35,7 +35,7 @@
 
         var options = {
             fade: 1000,
-            duration: 4000
+            duration: 2000
         };
 
         var images = $.map(items, function(i) { return i.img; });

@@ -28,17 +28,23 @@ Template Name: New & Press page
 						<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
 					</div>
 					<div class="three-fourth last">
-						<a href=""><?php the_title(); ?></a>
-						<?php the_content(); ?>
+						<h6 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h6>
+                        <div class="entry-meta"><?php echo esc_html( get_the_date() ); ?></div>
+                        <div class="sp-excerpt"><?php the_excerpt(); ?></div>
 					</div>
 				</section>
 			<?php 	
 				endwhile; wp_reset_postdata();
+				// Pagination
+                    if(function_exists('wp_pagenavi'))
+                        wp_pagenavi();
+                    else 
+                        echo sp_pagination();
 				endif; ?>
 		</div><!-- .main -->
 		<div class="sidebar">
-			
-            
+			<div class="brand-product">
+            </div>
 		</div><!-- .sidebar -->
 	</section>
 <?php endwhile; ?>

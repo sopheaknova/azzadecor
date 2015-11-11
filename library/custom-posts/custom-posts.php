@@ -18,8 +18,8 @@ if ( ! isset( $cp_menu_position ) )
 //All custom posts
 load_template( SP_BASE_DIR . '/library/custom-posts/cp-slideshow.php' );
 load_template( SP_BASE_DIR . '/library/custom-posts/cp-product.php' );
-load_template( SP_BASE_DIR . '/library/custom-posts/cp-news.php' );
 load_template( SP_BASE_DIR . '/library/custom-posts/cp-catalog.php' );
+load_template( SP_BASE_DIR . '/library/custom-posts/cp-news.php' );
 
 //Taxonomies
 load_template( SP_BASE_DIR . '/library/custom-posts/taxonomy-catalog.php' );
