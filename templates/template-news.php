@@ -25,11 +25,11 @@ Template Name: New & Press page
 					while ( $custom_query->have_posts() ) : $custom_query->the_post(); ?>
 				<section class="news-press clearfix">
 					<div class="one-fourth">
-						<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+						<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?></a>
 					</div>
 					<div class="three-fourth last">
 						<h6 class="entry-title"><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h6>
-                        <div class="entry-meta"><?php echo esc_html( get_the_date() ); ?></div>
+                        <div class="entry-meta"><i><?php echo esc_html( get_the_date() ); ?></i></div>
                         <div class="sp-excerpt"><?php the_excerpt(); ?></div>
 					</div>
 				</section>

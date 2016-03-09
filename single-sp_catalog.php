@@ -27,7 +27,7 @@
 				<?php foreach ($catalogs as $catalog ) { 
 					$catalog_term = get_term( $catalog, 'sp_catalog' ); ?>
 					<div class="two-fourth">
-						<a class="effect" href="<?php echo $catalog['sp_catalog_pdf']; ?>">
+						<a class="effect" href="<?php echo $catalog['sp_catalog_pdf']; ?>" target="_blank">
 		                  <img src="<?php echo aq_resize( $catalog['sp_catalog_cover'], 800, 500, true ); ?>">
 		                  <div class="text">
 		                      <h2><?php echo $catalog['title']; ?></h2>
